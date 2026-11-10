@@ -179,7 +179,13 @@ The second line is for Windows. On macOS/Linux, run `source vdb_task/bin/activat
 
 ### 2. `.env`
 
-Create a `.env` file next to the notebook. It is ignored by git, so it never gets committed.
+Copy the template and fill in your keys. `.env` is ignored by git, so it never gets committed.
+
+```bash
+copy .env_example .env
+```
+
+That command is for Windows. On macOS/Linux, use `cp .env_example .env`. The template contains:
 
 ```ini
 # Qdrant: leave QDRANT_API_KEY empty to use a local Docker Qdrant instead
@@ -222,6 +228,7 @@ Then choose **Run All**. Part 5 uploads 11,000 vectors, so it takes a few minute
 | `data/` | cached Gemini Embedding 2 vectors (1,000 docs and 5 queries) and the chunk texts |
 | `images/` | plots exported from the notebook, used in this README |
 | `requirements.txt` | Python dependencies |
+| `.env_example` | template for `.env`, with placeholders and an explanation of each setting |
 | `.env` | your API keys (not committed) |
 | `vdb_task/` | local virtual environment (not committed) |
 
